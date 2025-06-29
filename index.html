@@ -1,70 +1,42 @@
 <!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
+    <!-- ========= METADATA & BROWSER CONFIGURATION ========= -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Ram & Antara getting hitched!</title>
+    <title>Albi & Lola getting married</title>
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Social Media / Open Graph meta tags for sharing -->
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Ram & Antara getting hitched">
+    <meta property="og:title" content="Albi & Lola getting married">
     <meta property="og:description" content="We would like to invite you to our big day.">
-    <meta property="og:image" content="https://wedding.ramswaroop.me/img/hero-min.jpg">
+    <meta property="og:image" content="https://albifr.github.io/wedding-website/img/hero-min.jpg">
     <meta property="og:type" content="website">
+
+    <!-- Favicons for various devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 
-    <script>
-        // load css files from CDN if local node_modules fail
-        function loadCssFromCDN(css) {
-            // create new link tag
-            const link = document.createElement('link');
-            if (css === 'animate.css') {
-                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
-            } else if (css === 'font-awesome.css') {
-                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
-            }
-            link.rel = 'stylesheet';
-
-            // add link tag to head section
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-
-        // load js files from CDN if local node_modules fail
-        function loadJsFromCDN(js) {
-            if (js === 'waypoints.js') {
-                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
-            } else if (js === 'jquery.js') {
-                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
-            }
-        }
-    </script>
-
+    <!-- ========= STYLESHEETS ========= -->
+    <!-- NOTE: The `onerror` attribute provides a fallback, loading the stylesheet from a CDN if the local file fails to load. -->
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="css/queries.css">
-    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body id="top">
-<!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+<!-- ========= HERO SECTION ========= -->
+<!-- This is the main landing area with the big background image and logo. -->
 <section class="hero">
     <section class="navigation">
         <header>
@@ -95,10 +67,8 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
-                    <!--<h1>Ram and Antara</h1>-->
+                    <!-- The main logo image -->
                     <img src="img/logo-lg.png">
-                    <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
-                    <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
                 </div>
             </div>
         </div>
@@ -112,6 +82,8 @@
     <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
 </section>
 
+<!-- ========= INVITATION SECTION ========= -->
+<!-- A brief invitation message with social sharing buttons. -->
 <section id="invitation" class="section-padding">
     <div class="container">
         <div class="row">
@@ -125,6 +97,8 @@
     </div>
 </section>
 
+<!-- ========= "HOW WE MET" STORY SECTION ========= -->
+<!-- The story of the couple, with accompanying images. -->
 <section id="intro">
     <div class="container">
         <div class="row">
@@ -153,6 +127,8 @@
     </div>
 </section>
 
+<!-- ========= EVENTS SECTION ========= -->
+<!-- Details about the wedding events (Mehndi, Cocktail, etc.) and a "Dress Code" modal. -->
 <section class="events section-padding" id="events">
     <div class="container">
         <div class="row">
@@ -206,12 +182,9 @@
                 </a>
             </div>
         </div>
-        <!--<div class="row">
-            <div class="col-xs-12 section-border section-padding">
-            </div>
-        </div>-->
     </div>
 
+    <!-- Dress Code Modal: This is hidden by default and appears when the "Dress code" button is clicked. -->
     <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -258,6 +231,8 @@
 
 </section>
 
+<!-- ========= INSTAGRAM SECTION ========= -->
+<!-- Encourages guests to use a specific hashtag for their photos. -->
 <section id="instagram" class="section-padding">
     <div class="container">
         <div class="row">
@@ -276,6 +251,8 @@
     </div>
 </section>
 
+<!-- ========= ENGAGEMENT PICS GALLERY SECTION ========= -->
+<!-- A gallery of engagement photos that open in a lightbox (Fancybox). -->
 <section id="eng-pics" class="section-padding">
     <div class="container-fluid">
         <div class="row">
@@ -351,16 +328,10 @@
             <div class="col-xs-12 section-border section-padding"></div>
         </div>
     </div>
-    <!--<div class="row">
-        <div class="col-md-12">
-            <div class="diamond floating-logo">
-                <img src="img/sketch-logo.png" alt="Sketch Logo">
-                <div class="ring"></div>
-            </div>
-        </div>
-    </div>-->
 </section>
 
+<!-- ========= VIDEO BACKGROUND SECTION ========= -->
+<!-- A background video showcasing the city. Hidden on smaller screens. -->
 <section id="video-bg" class="hidden-sm hidden-xs">
     <div id="bgndVideo" class="player"
          data-property="{videoURL:'https://youtu.be/9giqL1H6yRs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
@@ -371,6 +342,8 @@
     </div>
 </section>
 
+<!-- ========= MAP & VENUE SECTION ========= -->
+<!-- Displays a Google Map of the venue and contact information. -->
 <section id="map" class="section-padding">
     <div class="text-center">
         <h3>How do I get there?</h3>
@@ -414,6 +387,8 @@
     </div>
 </section>
 
+<!-- ========= RSVP SECTION ========= -->
+<!-- The form for guests to RSVP. Includes a success modal. -->
 <section class="rsvp text-center" id="rsvp">
 
     <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
@@ -487,6 +462,8 @@
     </div>
 </section>
 
+<!-- ========= FOOTER ========= -->
+<!-- Contains a "back to top" button and credits. -->
 <footer>
     <div class="container">
         <div class="row">
@@ -497,31 +474,38 @@
         </div>
     </div>
 </footer>
-<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
-<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+
+<!-- ========= JAVASCRIPT LIBRARIES ========= -->
+<!-- Load jQuery from a local file, with a fallback to the Google CDN if the local file fails. -->
+<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>')</script>
+
+<!-- Other plugins -->
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
+
+<!-- Custom scripts for the site -->
 <script src="js/scripts.min.js"></script>
+
+<!-- Google Maps API -->
+<!-- IMPORTANT: Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual API key. -->
+<!-- For security, you should restrict this key in the Google Cloud Console to only work on your website's domain. -->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
-<!-- Google Analytics -->
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+
+<!-- Google Analytics (gtag.js) - Modern implementation -->
+<!-- Replace 'UA-46465113-4' with your own Google Analytics Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46465113-4"></script>
 <script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-46465113-4', 'auto');
-    ga('send', 'pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46465113-4');
 </script>
 </body>
 </html>
