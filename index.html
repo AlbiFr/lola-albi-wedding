@@ -1,3 +1,4 @@
+<!-- TODO clean the full repo from unused files  -->
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -17,10 +18,36 @@
 
     <!-- Favicons for various devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> <!-- TODO Create a favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5"> <!-- TODO Create mask-icon -->
+
+     <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+
+            // add link tag to head section
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+
+        // load js files from CDN if local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
 
     <!-- ========= STYLESHEETS ========= -->
     <!-- NOTE: The `onerror` attribute provides a fallback, loading the stylesheet from a CDN if the local file fails to load. -->
@@ -41,15 +68,15 @@
     <section class="navigation">
         <header>
             <div class="header-content">
-                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
+                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div> <!-- TODO Create or remove the logo -->
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
-                            <li><a href="#intro">How we met</a></li>
-                            <li><a href="#events">Events</a></li>
-                            <li><a href="#instagram">Instagram</a></li>
-                            <li><a href="#eng-pics">Engagement</a></li>
-                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Glimpse of the city</a></li>
+                            <li><a href="#intro">When & Where</a></li> <!-- TODO Create or remove the logo -->
+                            <li><a href="#events">Events</a></li> <!-- TODO Create or remove the logo -->
+                            <li><a href="#instagram">Instagram</a></li> <!-- TODO Create or remove the logo -->
+                            <li><a href="#eng-pics">Engagement</a></li> <!-- TODO Create or remove the logo -->
+                            <li class="hidden-sm hidden-xs"><a href="#video-bg">More travel information</a></li> <!-- TODO Create or remove the logo -->
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#map" class="login">Venue</a></li>
