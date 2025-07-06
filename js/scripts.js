@@ -161,11 +161,13 @@ $(document).ready(function () {
             data: eventData
         });
         $(selector).html(calendar);
+        // Prepend an icon to the generated button for a nicer look
+        $(selector + ' > a').prepend('<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp;');
     }
 
     // Define your events
     var weddingCeremony = {
-        title: "Albi & Lola's Wedding Ceremony",
+        title: "Albi and Lola's Wedding Ceremony",
         start: new Date('Aug 22, 2026 10:00'),
         end: new Date('Aug 22, 2026 12:00'),
         address: 'Gimnasio Moderno, Bogotà',
@@ -173,7 +175,7 @@ $(document).ready(function () {
     };
 
     var receptionParty = {
-        title: "Albi & Lola's Wedding Party",
+        title: "Albi and Lola's Wedding Party",
         start: new Date('Aug 22, 2026 18:00'),
         end: new Date('Aug 23, 2026 2:00'),
         address: 'Club Los Lagartos, Bogotà',
