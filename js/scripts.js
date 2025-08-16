@@ -187,33 +187,143 @@ $(document).ready(function () {
     addCalendarEvent('#add-to-cal-ceremony', weddingCeremony);
     addCalendarEvent('#add-to-cal-reception', receptionParty);
 
+    /********************** Google Script Endpoint **********************/
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAtkaYvfWuyhODNX-TrpwYN_PTUUgvSj4m00AgKzljmlNyr0cvqqnNkThGGyPtFE73Bg/exec';
+    var INVITE_CODE_HASH = 'ed798f8422b27e744cededabf35c9c23';
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
-        var data = $(this).serialize();
+        var data = $(this).serialize() + '&action=rsvp';
+        var alertWrapper = $('#alert-wrapper');
+        console.log(data);
+        alertWrapper.html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-        if (MD5($('#invite_code').val()) !== 'ed798f8422b27e744cededabf35c9c23') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        if (MD5($('#invite_code').val()) !== INVITE_CODE_HASH) {
+            alertWrapper.html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbyXPuOlNBCxymMRbm4zm5Jwif08d0DJBX_12JLo4GvEPzJLdOvsN7ku-rF9twg4XqaCJA/exec', data)
+            $.post(GOOGLE_SCRIPT_URL, data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
+                        alertWrapper.html(alert_markup('danger', data.message));
                     } else {
-                        $('#alert-wrapper').html('');
+                        alertWrapper.html('');
                         $('#rsvp-modal').modal('show');
                     }
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    alertWrapper.html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
                 });
         }
     });
+
+
+    /********************** Gift List **********************/
+    $('#gift-form').on('submit', function (e) {
+        e.preventDefault();
+        var alertWrapper = $('#gift-alert-wrapper');
+        var giftDetailsContainer = $('#gift-details');
+        var giftForm = $(this);
+        var submitButton = giftForm.find('button[type="submit"]');
+        var data = $(this).serialize() + '&action=gift';
+        console.log(data);
+        alertWrapper.html(alert_markup('info', '<strong>Just a sec!</strong> Checking your code...'));
+        submitButton.prop('disabled', true).text('Checking...');
+
+        if (MD5($('#gift_code').val()) !== INVITE_CODE_HASH) {
+            alertWrapper.html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+            submitButton.prop('disabled', false).text('Submit');
+        } else {
+            $.post(GOOGLE_SCRIPT_URL, data)
+                .done(function (data) {
+                    console.log(data);
+                    if (data.result === "error") {
+                        alertWrapper.html(alert_markup('danger', data.message));
+                        submitButton.prop('disabled', false).text('Submit');
+                    } else {
+                        alertWrapper.html('');
+                        // If the code is correct, populate and show the gift details.
+                        var giftInfo = data.data; // Corrected from 'response' to 'data'
+                        var giftHtml =
+                            '<p style="text-align: left; display: inline-block; margin-top: 20px;">' +
+                                '<strong>Revolut:</strong> <a href="' + giftInfo.revolutLink + '" target="_blank">' + giftInfo.revolutText + '</a><br>' +
+                                '<strong>Bank Transfer:</strong><br>' +
+                                'Account Holder: ' + giftInfo.accountHolder + '<br>' +
+                                'IBAN: ' + giftInfo.iban + '<br>' +
+                                'BIC/SWIFT: ' + giftInfo.bic +
+                            '</p>';
+
+                        giftDetailsContainer.html(giftHtml);
+                        alertWrapper.html(''); // Clear loading message
+                        giftForm.slideUp();
+                        giftDetailsContainer.slideDown();
+                    }
+                })
+                .fail(function (data) {
+                    console.log(data);
+                    alertWrapper.html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    submitButton.prop('disabled', false).text('Submit');
+                });
+        }
+    });
+
+
+    // $('#gift-form').on('submit', function (e) {
+    //     e.preventDefault(); // Prevent the form from submitting the traditional way
+    //     var alertWrapper = $('#gift-alert-wrapper');
+    //     var giftCodeInput = $('#gift_code');
+    //     var giftDetailsContainer = $('#gift-details');
+    //     var giftForm = $(this);
+    //     var submitButton = giftForm.find('button[type="submit"]');
+
+    //     // Show a loading message
+    //     alertWrapper.html(alert_markup('info', '<strong>Just a sec!</strong> Checking your code...'));
+    //     submitButton.prop('disabled', true).text('Checking...');
+
+    //     // Make a GET request to the Google Script
+    //     $.ajax({
+    //         url: 'https://script.google.com/macros/s/AKfycbx5mI69fBFLoc6K3ZuY5JPdOukj-x7HtJbs0yb_R4HNr5lspnypan0ficPX06fYz_Ur/exec',
+    //         method: "GET",
+    //         dataType: "json",
+    //         data: {
+    //             action: "getGiftInfo",
+    //             gift_code: giftCodeInput.val()
+    //         }
+    //     }).done(function (response) {
+    //         if (response.result === "success") {
+    //             // If the code is correct, populate and show the gift details.
+    //             var giftInfo = response.data;
+    //              var giftHtml = '<h4>How to contribute</h4>' +
+    //                 '<p>You can send your gift to our Revolut account or via a bank transfer.</p>' +
+    //                 '<p style="text-align: left; display: inline-block; margin-top: 20px;">' +
+    //                     '<strong>Revolut:</strong> <a href="' + giftInfo.revolutLink + '" target="_blank">' + giftInfo.revolutText + '</a><br>' +
+    //                     '<strong>Bank Transfer:</strong><br>' +
+    //                     'Account Holder: ' + giftInfo.accountHolder + '<br>' +
+    //                     'IBAN: ' + giftInfo.iban + '<br>' +
+    //                     'BIC/SWIFT: ' + giftInfo.bic +
+    //                 '</p>' +
+    //                 '<p style="margin-top: 20px;">Thank you so much for your generosity!</p>';
+
+
+    //             giftDetailsContainer.html(giftHtml);
+    //             alertWrapper.html(''); // Clear loading message
+    //             giftForm.slideUp();
+    //             giftDetailsContainer.slideDown();
+
+    //         } else {
+    //             // If the script returns an error (e.g., wrong code)
+    //             alertWrapper.html(alert_markup('danger', '<strong>Sorry!</strong> ' + response.message));
+    //             submitButton.prop('disabled', false).text('View Gift Info');
+    //         }
+    //     }).fail(function (jqXHR, textStatus, errorThrown) {
+    //         // Handle network errors or script failures
+    //         console.error("Gift info fetch failed: ", textStatus, errorThrown);
+    //         alertWrapper.html(alert_markup('danger', '<strong>Oops!</strong> Something went wrong. Please try again later.'));
+    //         submitButton.prop('disabled', false).text('View Gift Info');
+    //     });
+    // });
 
 });
 

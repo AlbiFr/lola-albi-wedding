@@ -367,27 +367,37 @@
 
 <!-- ========= GIFT LIST SECTION ========= -->
 <!-- Information on how guests can contribute with a monetary gift. -->
-<section id="gift-list" class="events section-padding">
+<section id="gift-list" class="gift section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3 class="header">Gift List</h3>
-                <p>Your presence at our wedding is the greatest gift of all. However, if you wish to give a gift, we would be overjoyed with a contribution to our honeymoon fund.</p>
-            </div>
-        </div> <!-- TODO choose how to ask for a gift -->
-        <div class="row wp7 text-center">
-            <div class="col-md-6 col-md-offset-3">
+                <p>Your presence at our wedding is the greatest gift of all. <br>
+                But if you wish to honour us with a present, we would be truly grateful for a contribution to our honeymoon fund.</p>
                 <img src="img/frutta/travel.png" class="travel-icon">
-                <h4>How to contribute</h4>
-                <p>You can send your gift to our Revolut account or via a bank transfer.</p>
-                <p style="text-align: left; display: inline-block; margin-top: 20px;">
-                    <strong>Revolut:</strong> <a href="https://revolut.me/your-revolut-id" target="_blank">revolut.me/your-revolut-id</a><br>
-                    <strong>Bank Transfer:</strong><br>
-                    Account Holder: Albi & Lola<br>
-                    IBAN: XX00 0000 0000 0000 0000 00<br>
-                    BIC/SWIFT: XXXXXXXX
-                </p>
+                <p>You can send your contribution via Revolut or via a bank transfer to our italian account.<br>
+                Instead if you prefer to give your gift in person, you are warmly welcome to bring it in an envelope on our wedding day.<br>
                 <p style="margin-top: 20px;">Thank you so much for your generosity!</p>
+            </div>
+        </div>
+        <div class="row wp7 text-center">
+
+            <div class="col-md-6 col-md-offset-3">
+                <!-- Form to enter invite code -->
+                <form id="gift-form" class="gift-form" action="" method="POST" style="padding-bottom: 20px;">
+                    <h3>View our bank and revolout detail using your invide code!</h3>
+                    <div class="form-input-group">
+                        <i class="fa fa-key"></i>
+                        <input type="number" name="gift_code" id="gift_code" min="0" placeholder="Invite code" required>
+                    </div>
+                    <div id="gift-alert-wrapper" style="margin-top: 10px;"></div>
+                    <button type="submit" class="btn-fill gift-btn" style="margin-top: 10px;">View Gift Info</button>
+                </form>
+
+
+                <!-- Hidden gift details -->
+                <!-- This container will be filled with gift info from Google Sheets -->
+                <div id="gift-details" style="display: none;"></div>
             </div>
         </div>
     </div>
