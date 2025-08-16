@@ -246,7 +246,11 @@ Navigation
   visibility: hidden;
   transition: all 300ms ease-in-out;
 }
-
+.travel-icon {
+  height: 56px; /* This matches the size of the previous icons */
+  width: auto;
+  margin-bottom: 20px; /* This keeps the spacing consistent */
+}
 /* ==========================================================================
 Hero
 ========================================================================== */
@@ -318,8 +322,9 @@ header {
     display: inline-block;
   }
   .logo img {
-    height: 19px;
+    height: 45px;
   }
+
   ul.primary-nav {
     margin: 0 0 0 75px;
     padding: 0;
