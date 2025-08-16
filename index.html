@@ -1,17 +1,16 @@
-<!-- TODO clean the full repo from unused files  -->
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
     <!-- ========= METADATA & BROWSER CONFIGURATION ========= -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Albi & Lola getting married</title>
+    <title>Lola & Albi getting married</title>
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Social Media / Open Graph meta tags for sharing -->
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Albi & Lola getting married">
+    <meta property="og:title" content="Lola & Albi getting married">
     <meta property="og:description" content="We would like to invite you to our big day.">
     <meta property="og:image" content="https://albifr.github.io/wedding-website/img/hero-min.jpg">
     <meta property="og:type" content="website">
@@ -40,7 +39,7 @@
     <section class="navigation">
         <header>
             <div class="header-content">
-                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div> <!-- TODO Create or remove the logo -->
+                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
@@ -102,7 +101,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/baby_lola.png" class="wp1"></div>  <!-- TODO change to lola picture -->
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/baby_lola.png" class="wp1"></div>
             <div class="col-md-6">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -112,11 +111,11 @@
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..   <!-- TODO change our story -->
                 </p>
             </div>
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/baby_albi.png" class="wp2"></div> <!-- TODO change to albi picture -->
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/baby_albi.png" class="wp2"></div>
         </div>
         <div class="row">
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/baby_lola.png" class="wp8"></div> <!-- TODO change to lola picture -->
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/baby_albi.png" class="wp9"></div> <!-- TODO change to albi picture -->
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/baby_lola.png" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/baby_albi.png" class="wp9"></div>
         </div>
     </div>
 </section>
@@ -310,10 +309,16 @@
             <div class="col-md-6 col-md-offset-3">
                 <h3>What are you waiting for?</h3>
                 <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
-                <form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
+                <form id="rsvp-form" class="rsvp-form" action="" method="POST">
                     <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                                                class="" min="0"
+                                                                placeholder="Invite code"
+                                                                required>
+                            </div>
+                        </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-envelope"></i><input type="email" name="email" class=""
@@ -321,6 +326,9 @@
                                                                      required>
                             </div>
                         </div>
+
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-user"></i><input name="name" class=""
@@ -328,22 +336,19 @@
                                                                  required>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
                                                                   max="4"
-                                                                  placeholder="Husband/Wife or kids"
-                                                                  required>
+                                                                  placeholder="Any Husband/Wife or kids">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
+                                <i class="fa fa-comment"></i><input name="comments" class=""
+                                                                  placeholder="Any comments">
                             </div>
                         </div>
                     </div>
