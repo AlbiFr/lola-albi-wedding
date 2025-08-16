@@ -17,6 +17,7 @@
 	background-color: $accent-color;
 }
 .btn-white {
+	color: $white-color;
 	font-size: 13px;
 	border: solid 2px;
 	-moz-border-radius: 40px;
@@ -27,7 +28,7 @@
 }
 .btn-white:hover, .btn-white:focus {
 	color: $accent-color;
-	border-color: $accent-color;
+	background-color: $white-color;
 }
 .btn-fill {
 	color: $white-color;
