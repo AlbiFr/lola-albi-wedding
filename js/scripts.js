@@ -71,7 +71,7 @@ $(document).ready(function () {
     /***************** Nav Transformicon ******************/
 
     /* When user clicks the Icon */
-    $('.nav-toggle').click(function () {
+    $('.nav-toggle').click(function (event) {
         $(this).toggleClass('active');
         $('.header-nav').toggleClass('open');
         event.preventDefault();

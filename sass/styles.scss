@@ -104,6 +104,11 @@ section .header {
   background-color: #000;
   border-radius: 4px;
 }
+.travel-icon {
+  height: 56px;
+  width: auto;
+  margin-bottom: 20px;
+}
 /* ==========================================================================
 Animations
 ========================================================================== */
@@ -246,11 +251,7 @@ Navigation
   visibility: hidden;
   transition: all 300ms ease-in-out;
 }
-.travel-icon {
-  height: 56px; /* This matches the size of the previous icons */
-  width: auto;
-  margin-bottom: 20px; /* This keeps the spacing consistent */
-}
+
 /* ==========================================================================
 Hero
 ========================================================================== */
