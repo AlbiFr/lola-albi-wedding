@@ -330,7 +330,7 @@
                     </div>
                     <!-- Contact Method Selection -->
                     <div style="margin-bottom: 10px; text-align: left; color: rgba(46,58,36,.6); padding-top: 10px; align-items: center;">
-                        <span style="margin-right: 10px; vertical-align: middle;">I would like to be contacted by:</span>
+                        <span style="margin-right: 10px; vertical-align: middle;">Contact me by:</span>
                         <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="contact_method" value="phone" checked style="margin-right: 5px; vertical-align: middle;"> Phone</label>
                         <label style="margin-right: 15px; font-weight: normal; cursor: pointer;"><input type="radio" name="contact_method" value="email" style="margin-right: 5px; vertical-align: middle;"> Email</label>
                     </div>
@@ -345,20 +345,16 @@
                     <div class="form-input-group">
                         <i class="fa fa-comment"></i><input name="comments" class="" placeholder="Any comments">
                     </div>
+                    <!-- Invite Code and Submit Button -->
+                    <div class="form-input-group">
+                        <i class="fa fa-key"></i><input type="text" inputmode="numeric" pattern="[0-9]*" name="invite_code" id="invite_code" class="" placeholder="Invite code" required>
+                    </div>
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
-                    <!-- Invite Code and Submit Button -->
-                    <div class="row">
-                        <div class="col-md-7 col-sm-7" style="padding-right: 5px;">
-                            <div class="form-input-group" style="margin-bottom: 0;">
-                                <i class="fa fa-key"></i><input type="text" inputmode="numeric" pattern="[0-9]*" name="invite_code" id="invite_code" class="" placeholder="Invite code" required>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-sm-5" style="padding-left: 5px;">
-                            <button type="submit" class="btn-fill rsvp-btn" style="height: 55px; width: 100%;">Yes, that's me!</button>
-                        </div>
-                    </div>
+
+                    <button class="btn-fill rsvp-btn">Yes, that's me!</button>
+
                 </form>
             </div>
         </div>
