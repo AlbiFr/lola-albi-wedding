@@ -219,6 +219,61 @@ $(document).ready(function () {
         }
     });
 
+    $(document).ready(function() {
+        // --- Contact Method Toggle ---
+        $('input[name="contact_method"]').on('change', function() {
+            if (this.value === 'phone') {
+                $('#email-input-group').hide();
+                $('#phone-input-group').show();
+                $('#email').prop('required', false).val('');
+                $('#phone').prop('required', true);
+            } else {
+                $('#email-input-group').show();
+                $('#phone-input-group').hide();
+                $('#email').prop('required', true);
+                $('#phone').prop('required', false).val('');
+            }
+        });
+
+        // --- Add/Remove Guests ---
+        var maxGuests = 4;
+        var guestInputContainer = $('#guest-inputs');
+        var addGuestBtn = $('#add-guest-btn');
+
+        addGuestBtn.on('click', function() {
+            var guestCount = guestInputContainer.children().length;
+            if (guestCount < maxGuests) {
+                var newGuestIndex = guestCount + 1;
+                var guestInputHtml =
+                    '<div class="form-input-group guest-input-group" style="margin-bottom: 10px; position: relative;">' +
+                    '<i class="fa fa-user"></i><input name="guest_name_'+ newGuestIndex + '" class="" placeholder="Guest ' + newGuestIndex + ' Name" required>'+
+                    '<button type="button" class="remove-guest-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 20px; color: #ff415c; padding: 0 5px; line-height: 1; cursor: pointer;">&times;</button></div>';
+                guestInputContainer.append(guestInputHtml);
+
+                if (guestInputContainer.children().length >= maxGuests) {
+                    addGuestBtn.hide();
+                }
+            }
+        });
+
+        // Use event delegation for dynamically added remove buttons
+        guestInputContainer.on('click', '.remove-guest-btn', function() {
+            $(this).closest('.guest-input-group').remove();
+
+            // Re-number remaining guests to keep names sequential and update placeholders
+            guestInputContainer.find('.guest-input-group').each(function(index) {
+                var newIndex = index + 1;
+                $(this).find('input').attr({
+                    'name': 'guest_name_' + newIndex,
+                    'placeholder': 'Guest ' + newIndex + ' Name'
+                });
+            });
+
+            if (guestInputContainer.children().length < maxGuests) {
+                addGuestBtn.show();
+            }
+        });
+    });
 
     /********************** Gift List **********************/
     $('#gift-form').on('submit', function (e) {
