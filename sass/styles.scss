@@ -108,6 +108,21 @@ section .header {
   width: auto;
   margin-bottom: 20px;
 }
+.event-location-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.event-location-image:hover {
+    transform: translateY(-5px); /* Lifts the image slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhances the shadow on hover */
+}
+
+
 /* ==========================================================================
 Animations
 ========================================================================== */
