@@ -25,16 +25,14 @@ Global Styles
 }
 a {
   color: $accent-color;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -webkit-transition-property: color, border-color, background-color;
-  transition-property: color, border-color, background-color;
+  transition: all 200ms ease;
 }
 a:hover, a:focus {
   color: $accent-color-hover;
   text-decoration: none;
+}
+.link{
+  text-decoration: underline;
 }
 body {
   font-family: $body-font;
