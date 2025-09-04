@@ -188,7 +188,7 @@ $(document).ready(function () {
     addCalendarEvent('#add-to-cal-reception', receptionParty);
 
     /********************** Google Script Endpoint **********************/
-    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAtkaYvfWuyhODNX-TrpwYN_PTUUgvSj4m00AgKzljmlNyr0cvqqnNkThGGyPtFE73Bg/exec';
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTEGYoRIGhHAbErg6AXXNFSE3EHYLVehaSXZw_3kAIV4CoGLaUL_CmbJHx78UTOF6-5Q/exec';
     var INVITE_CODE_HASH = 'ed798f8422b27e744cededabf35c9c23';
 
     /********************** RSVP **********************/
@@ -306,8 +306,7 @@ $(document).ready(function () {
                                 '<strong>Revolut:</strong> <a href="' + giftInfo.revolutLink + '" target="_blank">' + giftInfo.revolutText + '</a><br>' +
                                 '<strong>Bank Transfer:</strong><br>' +
                                 'Account Holder: ' + giftInfo.accountHolder + '<br>' +
-                                'IBAN: ' + giftInfo.iban + '<br>' +
-                                'BIC/SWIFT: ' + giftInfo.bic +
+                                'IBAN: ' + giftInfo.iban
                             '</p>';
 
                         giftDetailsContainer.html(giftHtml);
