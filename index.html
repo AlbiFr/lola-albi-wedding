@@ -279,6 +279,78 @@
     </div>
 </section>
 
+<!-- ========= RSVP SECTION ========= -->
+<!-- The form for guests to RSVP. Includes a success modal. -->
+<section class="rsvp text-center" id="rsvp">
+
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Thank you!</h3>
+                        <p>We are glad to see you join us on our big day.</p>
+                        <div id="add-to-cal"></div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>What are you waiting for?</h3>
+                <p>We would greatly appreciate if you could RSVP <strong>before 1<sup>st</sup> of November 2025</strong></p>
+                <form id="rsvp-form" class="rsvp-form" action="" method="POST">
+                    <div class="form-input-group">
+                        <i class="fa fa-user"></i><input name="name" class=""
+                                                        placeholder="Your full name and surname"
+                                                        required>
+                    </div>
+                    <!-- Guests section -->
+                    <div id="guests-wrapper">
+                        <p style="text-align: left; margin-bottom: 10px; padding-bottom: 0;">Bringing anyone with you?</p>
+                        <div id="guest-inputs" style="margin-top: 10px;">
+                            <!-- Guest inputs will be added here dynamically -->
+                        </div>
+                        <button type="button" id="add-guest-btn" class="btn btn-small" style="margin-bottom: 10px;"><i class="fa fa-plus"></i> Add Guest</button>
+                    </div>
+                    <!-- Contact Method Selection -->
+                    <div style="margin-bottom: 10px; text-align: left; color: rgba(46,58,36,.6); padding-top: 10px; align-items: center;">
+                        <span style="margin-right: 10px; vertical-align: middle;">Contact me by:</span>
+                        <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="contact_method" value="phone" checked style="margin-right: 5px; vertical-align: middle;"> Phone</label>
+                        <label style="margin-right: 15px; font-weight: normal; cursor: pointer;"><input type="radio" name="contact_method" value="email" style="margin-right: 5px; vertical-align: middle;"> Email</label>
+                    </div>
+                    <div id="phone-input-group" class="form-input-group">
+                        <i class="fa fa-phone"></i><input type="tel" name="phone" id="phone" class="" placeholder="Your phone number">
+                    </div>
+                    <div id="email-input-group" class="form-input-group" style="display:none;">
+                        <i class="fa fa-envelope"></i><input type="email" name="email" id="email" class="" placeholder="Your email" required>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="form-input-group">
+                        <i class="fa fa-comment"></i><input name="comments" class="" placeholder="Any comments">
+                    </div>
+                    <!-- Invite Code and Submit Button -->
+                    <div class="form-input-group">
+                        <i class="fa fa-key"></i><input type="text" inputmode="numeric" pattern="[0-9]*" name="invite_code" id="invite_code" class="" placeholder="Invite code" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="alert-wrapper"></div>
+                    </div>
+
+                    <button class="btn-fill rsvp-btn">Yes, that's me!</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ========= GIFT LIST SECTION ========= -->
 <!-- Information on how guests can contribute with a monetary gift. -->
 <section id="gift-list" class="gift section-padding">
