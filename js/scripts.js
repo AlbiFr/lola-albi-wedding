@@ -302,7 +302,9 @@ $(document).ready(function () {
                         // If the code is correct, populate and show the gift details.
                         var giftInfo = data.data; // Corrected from 'response' to 'data'
                         var giftHtml =
-                            '<p style="text-align: left; display: inline-block; margin-top: 20px;">' +
+                            '<p class="col-md-12 text-center" style="padding-top: 20px">' +
+                                'You can use the following bank account details. <br>' +
+                                'Alternatively, if you prefer, you are warmly welcome to bring your gift in an envelope on our special day. <br><br>' +
                                 '<strong>Revolut:</strong> <a href="' + giftInfo.revolutLink + '" target="_blank">' + giftInfo.revolutText + '</a><br>' +
                                 '<strong>Bank Transfer:</strong><br>' +
                                 'Account Holder: ' + giftInfo.accountHolder + '<br>' +
