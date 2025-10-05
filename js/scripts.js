@@ -236,7 +236,7 @@ $(document).ready(function () {
         });
 
         // --- Add/Remove Guests ---
-        var maxGuests = 4;
+        var maxGuests = 1;
         var guestInputContainer = $('#guest-inputs');
         var addGuestBtn = $('#add-guest-btn');
 
@@ -246,7 +246,7 @@ $(document).ready(function () {
                 var newGuestIndex = guestCount + 1;
                 var guestInputHtml =
                     '<div class="form-input-group guest-input-group" style="margin-bottom: 10px; position: relative;">' +
-                    '<i class="fa fa-user"></i><input name="guest_name_'+ newGuestIndex + '" class="" placeholder="Guest ' + newGuestIndex + ' Name" required>'+
+                    '<i class="fa fa-user"></i><input name="guest_name_'+ newGuestIndex + '" class="" placeholder="Spouse full name" required>'+
                     '<button type="button" class="remove-guest-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 20px; color: #ff415c; padding: 0 5px; line-height: 1; cursor: pointer;">&times;</button></div>';
                 guestInputContainer.append(guestInputHtml);
 
