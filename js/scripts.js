@@ -188,7 +188,7 @@ $(document).ready(function () {
     addCalendarEvent('#add-to-cal-reception', receptionParty);
 
     /********************** Google Script Endpoint **********************/
-    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTEGYoRIGhHAbErg6AXXNFSE3EHYLVehaSXZw_3kAIV4CoGLaUL_CmbJHx78UTOF6-5Q/exec';
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwpEMRYdiMvft7q37R9QDK8b4X1Cr61QKhtwDCwEHn6IJytehjAgrKHDoMMwWanOCXlww/exec';
     var INVITE_CODE_HASH = 'ed798f8422b27e744cededabf35c9c23';
 
     /********************** RSVP **********************/
@@ -305,7 +305,8 @@ $(document).ready(function () {
                             '<p class="col-md-12 text-center" style="padding-top: 20px">' +
                                 'You can use the following bank account details. <br>' +
                                 'Alternatively, if you prefer, you are warmly welcome to bring your gift in an envelope on our special day. <br><br>' +
-                                '<strong>Revolut:</strong> <a href="' + giftInfo.revolutLink + '" target="_blank">' + giftInfo.revolutText + '</a><br>' +
+                                '<strong>Revolut Alberto:</strong> <a href="' + giftInfo.revolutLinkAlbi + '" target="_blank">' + giftInfo.revolutTextAlbi + '</a><br>' +
+                                '<strong>Revolut Lorenza:</strong> <a href="' + giftInfo.revolutLinkLola + '" target="_blank">' + giftInfo.revolutTextLola + '</a><br>' +
                                 '<strong>Bank Transfer:</strong><br>' +
                                 'Account Holder: ' + giftInfo.accountHolder + '<br>' +
                                 'IBAN: ' + giftInfo.iban
@@ -324,62 +325,6 @@ $(document).ready(function () {
                 });
         }
     });
-
-
-    // $('#gift-form').on('submit', function (e) {
-    //     e.preventDefault(); // Prevent the form from submitting the traditional way
-    //     var alertWrapper = $('#gift-alert-wrapper');
-    //     var giftCodeInput = $('#gift_code');
-    //     var giftDetailsContainer = $('#gift-details');
-    //     var giftForm = $(this);
-    //     var submitButton = giftForm.find('button[type="submit"]');
-
-    //     // Show a loading message
-    //     alertWrapper.html(alert_markup('info', '<strong>Just a sec!</strong> Checking your code...'));
-    //     submitButton.prop('disabled', true).text('Checking...');
-
-    //     // Make a GET request to the Google Script
-    //     $.ajax({
-    //         url: 'https://script.google.com/macros/s/AKfycbx5mI69fBFLoc6K3ZuY5JPdOukj-x7HtJbs0yb_R4HNr5lspnypan0ficPX06fYz_Ur/exec',
-    //         method: "GET",
-    //         dataType: "json",
-    //         data: {
-    //             action: "getGiftInfo",
-    //             gift_code: giftCodeInput.val()
-    //         }
-    //     }).done(function (response) {
-    //         if (response.result === "success") {
-    //             // If the code is correct, populate and show the gift details.
-    //             var giftInfo = response.data;
-    //              var giftHtml = '<h4>How to contribute</h4>' +
-    //                 '<p>You can send your gift to our Revolut account or via a bank transfer.</p>' +
-    //                 '<p style="text-align: left; display: inline-block; margin-top: 20px;">' +
-    //                     '<strong>Revolut:</strong> <a href="' + giftInfo.revolutLink + '" target="_blank">' + giftInfo.revolutText + '</a><br>' +
-    //                     '<strong>Bank Transfer:</strong><br>' +
-    //                     'Account Holder: ' + giftInfo.accountHolder + '<br>' +
-    //                     'IBAN: ' + giftInfo.iban + '<br>' +
-    //                     'BIC/SWIFT: ' + giftInfo.bic +
-    //                 '</p>' +
-    //                 '<p style="margin-top: 20px;">Thank you so much for your generosity!</p>';
-
-
-    //             giftDetailsContainer.html(giftHtml);
-    //             alertWrapper.html(''); // Clear loading message
-    //             giftForm.slideUp();
-    //             giftDetailsContainer.slideDown();
-
-    //         } else {
-    //             // If the script returns an error (e.g., wrong code)
-    //             alertWrapper.html(alert_markup('danger', '<strong>Sorry!</strong> ' + response.message));
-    //             submitButton.prop('disabled', false).text('View Gift Info');
-    //         }
-    //     }).fail(function (jqXHR, textStatus, errorThrown) {
-    //         // Handle network errors or script failures
-    //         console.error("Gift info fetch failed: ", textStatus, errorThrown);
-    //         alertWrapper.html(alert_markup('danger', '<strong>Oops!</strong> Something went wrong. Please try again later.'));
-    //         submitButton.prop('disabled', false).text('View Gift Info');
-    //     });
-    // });
 
 });
 
