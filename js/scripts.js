@@ -188,7 +188,7 @@ $(document).ready(function () {
     addCalendarEvent('#add-to-cal-reception', receptionParty);
 
     /********************** Google Script Endpoint **********************/
-    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzn7rqD75AGpFNd8UiaTuEw31KOQsvjFGziGWV9zXQgaAAXpAclaveH3uoq5TVCKaYWNA/exec';
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAaku9SfthefoaPlR0GVaxvKLq-gMxs3MA1kAhvCw1OgMutrT15-vTA06UjHsiWyB2Ag/exec';
     var INVITE_CODE_HASH = 'ed798f8422b27e744cededabf35c9c23';
 
     /********************** RSVP **********************/
